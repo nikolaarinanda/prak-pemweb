@@ -1,0 +1,192 @@
+/* * {
+  border: 1px solid black;
+} */
+
+/* reset style */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #aaa;
+}
+
+/* header */
+header {
+  background-color: lightgreen;
+  color: white;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav img {
+  height: 50px;
+  margin-left: 75px;
+  transition: 0.5s;
+}
+
+nav img:hover {
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+ul li {
+  margin: 0 5px;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+ul li a:hover {
+  background-color: white;
+  color: lightgreen;
+  cursor: pointer;
+}
+
+button {
+  background-color: lightgreen;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+button:hover {
+  background-color: white;
+  color: lightgreen;
+  cursor: pointer;
+}
+
+/* section 1 */
+.box1 {
+  margin: 15px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-text {
+  padding: 10px;
+}
+
+.info-image img {
+  width: 300px;
+  border-radius: 5%;
+  transition: 0.5s;
+}
+
+.info-image img:hover {
+  transform: scale(1.1);
+}
+
+/* section 2 */
+.box2 {
+  margin: 15px;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+  overflow: scroll;
+}
+
+h3 {
+  text-decoration: underline;
+}
+
+table {
+  margin: 0 auto;
+  width: 80%;
+  border: 1px solid black;
+}
+
+table thead th {
+  background-color: lightsalmon;
+}
+
+th,
+td {
+  border: 1px solid black;
+}
+
+/* section 3 */
+.box3 {
+  margin: 15px;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.list-project {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.project {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightseagreen;
+  color: white;
+  border-radius: 10px;
+  margin: 10px;
+  transition: 0.5s;
+}
+
+.project:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav img {
+    margin: 0;
+  }
+
+  nav ul {
+    align-items: center;
+  }
+
+  .box1 {
+    flex-direction: column-reverse;
+  }
+
+  .box1 .info-text h2 {
+    text-align: center;
+  }
+
+  .box1 .info-text p {
+    text-align: justify;
+  }
+
+  .list-project {
+    flex-direction: column;
+    align-items: center;
+  }
+}
