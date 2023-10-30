@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>JS Dasar</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Kalkulator</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section>
+        <h3>Hitung Bilangan Ganjil & Genap</h3>
+        <!-- <form action="index.html" method="get"> -->
+        <label for="inputNumber">Masukan Bilangan Bulat Positif: </label>
+        <br />
+        <input
+          type="number"
+          id="inputNumber"
+          name="inputNumber"
+          min="1"
+          step="1"
+        />
+        <button onclick="hitungBilangan()">Hitung</button>
+        <!-- </form> -->
+
+        <div class="hasil">
+          <div id="hasilGanjil"></div>
+          <div id="hasilGenap"></div>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          Bukan Hak Cipta © 2023 oleh Nikola Arinanda. Semua hak tidak
+          dilindungi
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      function hitungBilangan() {
+        const inputNumber = parseInt(
+          document.getElementById("inputNumber").value
+        );
+
+        if (inputNumber <= 0) {
+          document.getElementById("hasilGanjil").textContent =
+            "Kesalahan input, mohon masukan bilangan positif !!!";
+          document.getElementById("hasilGenap").textContent = "";
+          return;
+        }
+
+        let hasilGanjil = 0;
+        let hasilGenap = 0;
+
+        for (let i = 1; i <= inputNumber; i++) {
+          if (i % 2 == 0) {
+            hasilGenap++;
+          } else {
+            hasilGanjil++;
+          }
+        }
+
+        document.getElementById(
+          "hasilGanjil"
+        ).textContent = `Jumlah Bilangan ganjil: ${hasilGanjil}`;
+        document.getElementById(
+          "hasilGenap"
+        ).textContent = `Jumlah Bilangan genap: ${hasilGenap}`;
+      }
+    </script>
+  </body>
+</html>
