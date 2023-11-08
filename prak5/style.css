@@ -1,13 +1,19 @@
-/* style reset */
+/* Nama: Nikola Arinanda
+   NIM: 121140202
+   Kelas: RB
+*/
+
+/* style seluruh halaman */
 * {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* membuat tampilan body dalam bentuk grid */
+/* style halaman web */
 body {
   height: 100vh;
+  /* tampilan grid */
   display: grid;
   grid-template-rows: 1fr 6fr 1fr;
   grid-template-areas:
@@ -15,8 +21,8 @@ body {
     "main-content"
     "footer";
 }
-/*  */
 
+/* style header */
 .header {
   grid-area: "header";
   background-color: aquamarine;
@@ -26,6 +32,7 @@ body {
   align-items: center;
 }
 
+/* style judul web */
 .header h3 {
   font-family: "Pacifico", cursive;
   font-size: 2em;
@@ -34,20 +41,24 @@ body {
   transition: 0.3s;
 }
 
+/* style judul web ketika disorot oleh kursor */
 .header h3:hover {
   color: white;
 }
 
+/* style unorder list */
 .header nav ul {
   list-style: none;
   margin-right: 10vw;
 }
 
+/* style list */
 .header nav ul li {
   display: inline-block;
   margin-left: 3vw;
 }
 
+/* style navigasi (link) web */
 .header nav ul li a {
   text-decoration: none;
   color: black;
@@ -59,12 +70,13 @@ body {
   transition: 0.3s;
 }
 
+/* style navigasi (link) web ketika disorot kursor */
 .header nav ul li a:hover {
   color: white;
   background-color: black;
 }
 
-/* membuat tampilan class .main-content sebagai flex */
+/* style konten utama web */
 .main-content {
   grid-area: "main-content";
   background-color: #aaa;
@@ -72,8 +84,8 @@ body {
   justify-content: center;
   align-items: center;
 }
-/*  */
 
+/* style kontainer kalkulator */
 .kalkulator {
   width: 49vw;
   height: 50vh;
@@ -83,14 +95,17 @@ body {
   border-radius: 10px;
 }
 
+/* style semua tombol dengan kelas operator */
 .operator {
   color: coral;
 }
 
+/* style semua tombol dengan kelas operator ketika disorot kursor */
 .tombol.operator:hover {
   color: coral;
 }
 
+/* style container tampilan perhitungan */
 .hasil {
   width: 49vw;
   height: 8vh;
@@ -100,11 +115,13 @@ body {
   box-sizing: border-box;
 }
 
+/* style tampilan perhitungan */
 .hasil h3 {
   text-align: center;
   line-height: 8vh;
 }
 
+/* style semua button dengan kelas tombol */
 .tombol {
   width: 12vw;
   height: 10vh;
@@ -114,12 +131,14 @@ body {
   font-size: larger;
 }
 
+/* style semua button dengan kelas tombol ketika disorot kursor*/
 .tombol:hover {
   background-color: black;
   color: white;
   cursor: pointer;
 }
 
+/* style footer */
 .footer {
   grid-area: "footer";
   background-color: #000;
