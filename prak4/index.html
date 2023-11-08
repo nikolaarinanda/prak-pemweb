@@ -1,88 +1,88 @@
+<!-- Nama: Nikola Arinanda
+     NIM: 121140202
+     Kelas: RB 
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <title>JS Dasar</title>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- web title -->
+    <title>Prak 4</title>
+    <!-- link ke file CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <div class="container">
-      <header>
-        <h1>Kalkulator</h1>
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
-        </nav>
-      </header>
+    <!-- Header -->
+    <header>
+      <!-- judul web -->
+      <h1>Kalkulator ganjil genap</h1>
+      <!-- navigasi web -->
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </header>
 
-      <section>
-        <h3>Hitung Bilangan Ganjil & Genap</h3>
-        <!-- <form action="index.html" method="get"> -->
-        <label for="inputNumber">Masukan Bilangan Bulat Positif: </label>
+    <!-- konten utama -->
+    <main>
+      <label for="bilangan">Masukan bilangan positif: </label>
+      <input type="number" name="bilangan" id="bilangan" />
+      <button type="button" onclick="ganjilGenap()">Kirim</button>
+
+      <!-- menampilkan hasil -->
+      <div class="hasil">
+        <!-- <p id="bilGanjil"></p>
         <br />
-        <input
-          type="number"
-          id="inputNumber"
-          name="inputNumber"
-          min="1"
-          step="1"
-        />
-        <button onclick="hitungBilangan()">Hitung</button>
-        <!-- </form> -->
+        <p id="bilGenap"></p> -->
+        <div id="bilGanjil"></div>
+        <div id="bilGenap"></div>
+      </div>
+    </main>
 
-        <div class="hasil">
-          <div id="hasilGanjil"></div>
-          <div id="hasilGenap"></div>
-        </div>
-      </section>
+    <!-- footer -->
+    <footer>
+      <p>© Nikola Arinanda 2023 - Hak Cipta Tidak Dilindungi Undang-Undang</p>
+    </footer>
 
-      <footer>
-        <p>
-          Bukan Hak Cipta © 2023 oleh Nikola Arinanda. Semua hak tidak
-          dilindungi
-        </p>
-      </footer>
-    </div>
-
+    <!-- kode JS -->
     <script>
-      function hitungBilangan() {
-        const inputNumber = parseInt(
-          document.getElementById("inputNumber").value
-        );
+      function ganjilGenap() {
+        // declare var untuk menampung bilangan yg akan dihitung
+        let bil = parseInt(document.getElementById("bilangan").value);
 
-        if (inputNumber <= 0) {
-          document.getElementById("hasilGanjil").textContent =
-            "Kesalahan input, mohon masukan bilangan positif !!!";
-          document.getElementById("hasilGenap").textContent = "";
-          return;
+        // jika bilangan bukan bil positif (< 0)
+        if (bil < 0) {
+          alert(
+            "Bilangan yg dimasukan salah, silahkan masukan bilangan positif!"
+          );
         }
-
-        let hasilGanjil = 0;
-        let hasilGenap = 0;
-
-        for (let i = 1; i <= inputNumber; i++) {
-          if (i % 2 == 0) {
-            hasilGenap++;
-          } else {
-            hasilGanjil++;
+        //   jika bilangan adalah bil positif (< 0)
+        else {
+          // declare var penampung bil ganjil & genap
+          let ganjil = 0;
+          let genap = 0;
+          // perulangan untuk menghitung bil ganjil & genap
+          for (let i = 1; i <= bil; i++) {
+            if (i % 2 == 0) {
+              genap++;
+            } else {
+              ganjil++;
+            }
           }
-        }
+          // menampilkan hasil perhitungan bil ganjil & genap
+          document.getElementById(
+            "bilGanjil"
+          ).textContent = `Jumlah Bilangan ganjil: ${ganjil}`;
 
-        document.getElementById(
-          "hasilGanjil"
-        ).textContent = `Jumlah Bilangan ganjil: ${hasilGanjil}`;
-        document.getElementById(
-          "hasilGenap"
-        ).textContent = `Jumlah Bilangan genap: ${hasilGenap}`;
+          document.getElementById(
+            "bilGenap"
+          ).textContent = `Jumlah Bilangan genap: ${genap}`;
+        }
       }
     </script>
   </body>
