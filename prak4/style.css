@@ -1,13 +1,21 @@
+/* Nama: Nikola Arinanda
+   NIM: 121140202
+   Kelas: RB
+ */
+
+/* style reset */
 * {
-  /* border: 1px solid black; */
   margin: 0;
+  padding: 0;
 }
 
+/* style body (tampilan website keseluruhan) */
 body {
   font-family: Arial, Helvetica, sans-serif;
   height: 100vh;
 }
 
+/* style header */
 header {
   height: 15vh;
   width: 100vw;
@@ -19,21 +27,26 @@ header {
   align-items: center;
   position: fixed;
   top: 0;
+  border-bottom: 3px solid black;
 }
 
+/* style judul website */
 header h1 {
   font-family: "pasifico", sans-serif;
 }
 
+/* style tag navigasi */
 nav {
   margin: 10vw;
 }
 
+/* style unordered list */
 nav ul {
   list-style: none;
   display: flex;
 }
 
+/* style tombol navigasi (link) */
 ul li a {
   padding: 10px;
   color: white;
@@ -44,34 +57,31 @@ ul li a {
   border-radius: 5px;
 }
 
+/* style tombol navigasi (link) ketika disorot kursor */
 ul li a:hover {
   color: coral;
   background-color: white;
 }
 
-section {
+/* style main content */
+main {
   height: 75vh;
   padding: 10px;
   margin-top: 15vh;
 }
 
-section h3 {
-  margin: 2vh 0 3vh 0;
-}
-
-section button {
+/* style button */
+main button {
   border-radius: 3px;
 }
 
-section button:hover {
+/* style button ketika disorot kursor */
+main button:hover {
   color: white;
   background-color: black;
 }
 
-section .hasil {
-  margin-top: 10px;
-}
-
+/* style footer */
 footer {
   height: 10vh;
   width: 100vw;
