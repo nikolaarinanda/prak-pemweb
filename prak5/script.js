@@ -1,3 +1,7 @@
+// Nama: Nikola Arinanda
+// NIM: 121140202
+// Kelas: 121140202
+
 // Variabel untuk menyimpan angka dan operasi
 let number = "";
 // Variabel untuk menampung tampilan operasi yang sedang dilakukan
@@ -19,6 +23,7 @@ function bagi() {
   document.getElementById("nilai-hasil").textContent = displayOperate;
   arrayOper.push(parseFloat(number));
   arrayOper.push("/");
+  // mengosongkan var number
   number = "";
 }
 
@@ -28,6 +33,7 @@ function kali() {
   document.getElementById("nilai-hasil").textContent = displayOperate;
   arrayOper.push(parseFloat(number));
   arrayOper.push("*");
+  // mengosongkan var number
   number = "";
 }
 
@@ -37,6 +43,7 @@ function kurang() {
   document.getElementById("nilai-hasil").textContent = displayOperate;
   arrayOper.push(parseFloat(number));
   arrayOper.push("-");
+  // mengosongkan var number
   number = "";
 }
 
@@ -46,6 +53,7 @@ function tambah() {
   document.getElementById("nilai-hasil").textContent = displayOperate;
   arrayOper.push(parseFloat(number));
   arrayOper.push("+");
+  // mengosongkan var number
   number = "";
 }
 
@@ -63,12 +71,17 @@ function hasil() {
       const nextNumber = arrayOper[i + 1];
 
       let result;
+      // operasi kali
       if (operator === "*") {
         result = prevNumber * nextNumber;
-      } else if (operator === "/") {
+      }
+      // operasi bagi
+      else if (operator === "/") {
         if (nextNumber !== 0) {
           result = prevNumber / nextNumber;
-        } else {
+        }
+        // jika terjadi pembagian dengan nol
+        else {
           document.getElementById("nilai-hasil").textContent =
             "Error: Pembagian oleh nol";
           return;
@@ -87,9 +100,12 @@ function hasil() {
     const operator = arrayOper[i];
     const nextNumber = arrayOper[i + 1];
 
+    // operasi tambah
     if (operator === "+") {
       result += nextNumber;
-    } else if (operator === "-") {
+    }
+    // operasi kurang
+    else if (operator === "-") {
       result -= nextNumber;
     }
   }
